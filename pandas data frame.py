@@ -22,3 +22,28 @@ print(students_df.describe())
 titanic_df = pd.read_csv("/Users/clarence/Desktop/data science/titanic.csv")
 titanic_df.info()
 print(titanic_df)
+
+#fetch records from start
+print(titanic_df.head()) #by defalt it gives 5 records, specify if want different amount
+
+#fetch records from bottem
+print(titanic_df.tail())
+
+#shape of the data frame
+print(titanic_df.shape)
+
+#retrieve values for a single column
+print(titanic_df["Name"])
+
+#to find the age of the oldest passenger
+print(titanic_df["Age"].max())
+print(titanic_df["Fare"].sum())
+
+#fetch multiple columns
+print(titanic_df[["Name","Age"]])
+
+#conditional filtering
+print(titanic_df[titanic_df["Age"]<18])
+print(titanic_df[(titanic_df["Pclass"]==1)&(titanic_df["Age"]<18)]) # or = |
+#sliceing with index
+print(titanic_df.iloc[400:410,2:5])
