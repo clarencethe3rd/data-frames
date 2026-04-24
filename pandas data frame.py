@@ -50,6 +50,12 @@ print(titanic_df.iloc[400:410:2,2:5])
 print(titanic_df.iloc[[5,30,25,50],[1,3,4]])
 
 #conditional slicing
-print(titanic_df[titanic_df["Age"]<18,["name","pclass"]])
-highest = titanic_df["Age"].max
-print(highest)
+print(titanic_df.loc[titanic_df["Age"]<18,["Name","Pclass"]])
+highest = titanic_df["Age"].max()
+print(highest, "agqwidquwidhaishdoahsdoiawjodae")
+print(titanic_df.loc[titanic_df["Age"]==highest,["Name","Survived"]])
+print(titanic_df.loc[titanic_df["Survived"]==1,["Name","Pclass"]])
+
+#change values
+titanic_df.loc[0:2,"Name"] = ["adww", "dqwd", "qwdqw"]
+print(titanic_df.loc[0:2,"Name"])
