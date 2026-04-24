@@ -46,4 +46,10 @@ print(titanic_df[["Name","Age"]])
 print(titanic_df[titanic_df["Age"]<18])
 print(titanic_df[(titanic_df["Pclass"]==1)&(titanic_df["Age"]<18)]) # or = |
 #sliceing with index
-print(titanic_df.iloc[400:410,2:5])
+print(titanic_df.iloc[400:410:2,2:5])
+print(titanic_df.iloc[[5,30,25,50],[1,3,4]])
+
+#conditional slicing
+print(titanic_df[titanic_df["Age"]<18,["name","pclass"]])
+highest = titanic_df["Age"].max
+print(highest)
