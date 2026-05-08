@@ -59,3 +59,6 @@ print(titanic_df.loc[titanic_df["Survived"]==1,["Name","Pclass"]])
 #change values
 titanic_df.loc[0:2,"Name"] = ["adww", "dqwd", "qwdqw"]
 print(titanic_df.loc[0:2,"Name"])
+
+#
+titanic_df["discounted fare"] = titanic_df["fare"]/2
