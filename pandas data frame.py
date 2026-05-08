@@ -61,4 +61,18 @@ titanic_df.loc[0:2,"Name"] = ["adww", "dqwd", "qwdqw"]
 print(titanic_df.loc[0:2,"Name"])
 
 #
-titanic_df["discounted fare"] = titanic_df["fare"]/2
+titanic_df["discounted fare"] = titanic_df["Fare"]/2
+print(titanic_df["discounted fare"].head(10))
+#rename collumns
+titanic_df.rename(columns={"Fare":"Ticket Price", "discounted fare": "50ff"},inplace=True)
+print(titanic_df)
+#create csv
+titanic_df.to_csv("newtitanic.csv")
+#sort data frame
+titanic_df = titanic_df.sort_values(by="Name")
+print(titanic_df)
+#replace values
+titanic_df["Sex"] = titanic_df["Sex"].replace({"male":"M","female":"F"})
+print(titanic_df)
+#agrigation function
+print(titanic_df.agg({"Age":["min","max"],"Ticket Price":["sum","mean"]}))
