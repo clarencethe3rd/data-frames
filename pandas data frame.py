@@ -76,3 +76,7 @@ titanic_df["Sex"] = titanic_df["Sex"].replace({"male":"M","female":"F"})
 print(titanic_df)
 #agrigation function
 print(titanic_df.agg({"Age":["min","max"],"Ticket Price":["sum","mean"]}))
+#grouping
+pclassgroup = titanic_df.groupby(by="Pclass")
+print(pclassgroup.max())
+print(titanic_df.groupby[by="Pclass","Sex"].max())
