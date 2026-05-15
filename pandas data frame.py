@@ -79,4 +79,10 @@ print(titanic_df.agg({"Age":["min","max"],"Ticket Price":["sum","mean"]}))
 #grouping
 pclassgroup = titanic_df.groupby(by="Pclass")
 print(pclassgroup.max())
-print(titanic_df.groupby[by="Pclass","Sex"].max())
+print(titanic_df.groupby(by=["Pclass","Sex"]).max())
+print(titanic_df.groupby(by=["Pclass","Sex"])[["Age","Ticket Price"]].mean())
+#operations on text data
+
+print(titanic_df["Name"].str.lower())
+titanic_df["last name"] = titanic_df["Name"].str.split().str.get(-1)
+print(titanic_df)
